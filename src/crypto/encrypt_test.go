@@ -92,13 +92,6 @@ func TestFileEncryption(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-
-	fi3, err := os.Stat(path)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	t.Log("Decrypted file size: ", fi3.Size())
 }
 
 func TestTextEncryption(t *testing.T) {

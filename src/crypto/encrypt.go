@@ -19,6 +19,7 @@ import (
 	"crypto/rand"
 	"errors"
 	"io"
+	"io/ioutil"
 	"os"
 )
 
@@ -140,29 +141,10 @@ func writeFile(path string, data []byte) error {
 }
 
 func readFile(path string) (data []byte, e error) {
-	// Open file for reading.
-	var file, err = os.OpenFile(path, os.O_RDWR, 0644)
+	data, err := ioutil.ReadFile(path)
 	if err != nil {
-		return nil, err
-	}
-	defer file.Close()
-
-	fi, err := os.Stat(path)
-	if err != nil {
-		return nil, err
+		return nil, e
 	}
 
-	// get the size
-	fileSize := fi.Size()
-
-	// Read file, line by line
-	var fileData []byte
-
-	_, err = file.Read(fileData)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return fileData, nil
+	return data, nil
 }
