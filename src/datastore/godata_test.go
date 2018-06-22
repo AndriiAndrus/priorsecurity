@@ -18,7 +18,7 @@ func TestGoData(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	err := Load(file, datafrom)
+	err = Load(file, datafrom)
 	if err != nil {
 		t.Error(err)
 	}

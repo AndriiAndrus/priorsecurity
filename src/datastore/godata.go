@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-const file = "/workspaces/AndriiAndrus/src/mobiSec/test2.gob"
+//const file = "/workspaces/AndriiAndrus/src/mobiSec/test2.gob"
 
 // Encode via Gob to file
 func Save(path string, object interface{}) error {
