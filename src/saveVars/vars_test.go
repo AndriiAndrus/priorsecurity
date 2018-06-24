@@ -7,53 +7,32 @@ import (
 )
 
 func TestVarsStr(t *testing.T) {
-	InitVars(crypto.NewEncryptionKey(), "/workspaces/AndriiAndrus/src/mobiSec/vars.gob")
+	var ds = GetDatastore(crypto.NewEncryptionKey(), "/workspaces/AndriiAndrus/src/mobiSec/vars.gob")
 
-	value := "Spicy Chongqing hogo is amazing!"
+	ds.SetString("Test string", "Test string nadibf jfgb 78464")
+	ds.SetInt("Test int", rand.Int())
+	ds.SetFloat("Test float", rand.Float64())
 
-	err := SetString(value, "testStr")
+	ds.save()
+
+	str, err := ds.GetString("Test string")
 	if err != nil {
 		t.Fatal(err)
 	}
-	val, err := GetString("testStr")
+
+	t.Log("Value of `Test string` var: ", str)
+
+	in, err := ds.GetInt("Test int")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if val != value {
-		t.Fatal("Values not match")
-	}
-	t.Log("Value of `testStr` var: ", val)
-}
 
-func TestVarsInt(t *testing.T) {
-	//InitVars(crypto.NewEncryptionKey(), "/workspaces/AndriiAndrus/src/mobiSec/vars.gob")
+	t.Log("Value of `Test int` var: ", in)
 
-	value := rand.Int()
-
-	err := SetInt(value, "test")
+	fl, err := ds.GetFloat("Test float")
 	if err != nil {
 		t.Fatal(err)
 	}
-	val, err := GetInt("test")
-	if err != nil {
-		t.Fatal(err)
-	}
-	if val != value {
-		t.Fatal("Values not match")
-	}
-	t.Log("Value of `test` var: ", val)
-}
 
-func TestLoadVars(t *testing.T) {
-	val, err := GetString("testStr")
-	if err != nil {
-		t.Fatal(err)
-	}
-	t.Log("Loaded string: ", val)
-
-	val2, err := GetInt("test")
-	if err != nil {
-		t.Fatal(err)
-	}
-	t.Log("Loaded int: ", val2)
+	t.Log("Value of `Test float`: ", fl)
 }
