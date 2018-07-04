@@ -65,7 +65,7 @@ func TestEncryptDecryptGCM(t *testing.T) {
 func TestFileEncryption(t *testing.T) {
 	key := NewEncryptionKey()
 
-	path := "/workspaces/AndriiAndrus/src/mobiSec/test.gob"
+	path := "../test_file.gob"
 
 	fi, err := os.Stat(path)
 	if err != nil {

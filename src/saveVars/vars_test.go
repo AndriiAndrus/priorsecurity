@@ -2,12 +2,12 @@ package saveVars
 
 import (
 	"math/rand"
-	"mobiSec/crypto"
+	"priorsecurity/src/crypto"
 	"testing"
 )
 
 func TestVarsStr(t *testing.T) {
-	var ds = GetDatastore(crypto.NewEncryptionKey(), "/workspaces/AndriiAndrus/src/mobiSec/vars.gob")
+	var ds = GetDatastore(crypto.NewEncryptionKey(), "../test_vars.gob")
 
 	ds.SetString("Test string", "Test string nadibf jfgb 78464")
 	ds.SetInt("Test int", rand.Int())

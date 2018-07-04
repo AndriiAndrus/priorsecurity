@@ -3,9 +3,9 @@ package saveVars
 import (
 	"encoding/base64"
 	"fmt"
-	"mobiSec/crypto"
-	"mobiSec/datastore"
 	"os"
+	"priorsecurity/src/crypto"
+	"priorsecurity/src/datastore"
 	"strconv"
 )
 

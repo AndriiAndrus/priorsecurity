@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-const file = "/workspaces/AndriiAndrus/src/mobiSec/test.gob"
+const file = "../test_file.gob"
 
 type User struct {
 	Name, Pass string
