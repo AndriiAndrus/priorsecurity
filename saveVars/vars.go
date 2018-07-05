@@ -4,8 +4,8 @@ import (
 	"encoding/base64"
 	"fmt"
 	"os"
-	"priorsecurity/src/crypto"
-	"priorsecurity/src/datastore"
+	"priorsecurity/crypto"
+	"priorsecurity/datastore"
 	"strconv"
 )
 

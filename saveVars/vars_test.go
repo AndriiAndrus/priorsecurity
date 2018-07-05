@@ -2,7 +2,7 @@ package saveVars
 
 import (
 	"math/rand"
-	"priorsecurity/src/crypto"
+	"priorsecurity/crypto"
 	"testing"
 )
 
